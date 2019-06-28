@@ -19,15 +19,26 @@
 #' @rdname jobs
 source_and_pb <- function(script_path = NULL, ...) {
   if (is.null(script_path)) script_path <- rstudioapi::selectFile()
-  jobname = paste("R Job:", basename(script_path))
+  jobname <- paste("R Job:", basename(script_path))
+  start <- Sys.time()
   withCallingHandlers(
     source(normalizePath(script_path), ...),
     error = function(e) {
-      RPushbullet::pbPost("note", jobname, as.character(e))
+      runtime <- Sys.time() - start
+      RPushbullet::pbPost("note", jobname,
+                          paste(as.character(e),"\nOccurred after",
+                                round(as.double(runtime), 2),
+                                attr(runtime, "units"))
+                          )
       stop(e)
     }
   )
-  RPushbullet::pbPost("note", jobname, "This job has finished!")
+  runtime <- Sys.time() - start
+  RPushbullet::pbPost("note", jobname,
+                      paste( "This job has finished!\nRuntime of",
+                             round(as.double(runtime), 2),
+                             attr(runtime, "units")
+                      ))
 }
 
 #' @export
