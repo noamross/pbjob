@@ -2,5 +2,7 @@
 
 export(bg_and_pb)
 export(bg_current_and_pb)
+export(job_and_pb)
+export(job_current_and_pb)
 export(source_and_pb)
 export(source_current_and_pb)

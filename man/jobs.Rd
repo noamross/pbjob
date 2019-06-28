@@ -5,6 +5,8 @@
 \alias{source_current_and_pb}
 \alias{bg_and_pb}
 \alias{bg_current_and_pb}
+\alias{job_and_pb}
+\alias{job_current_and_pb}
 \title{Run Scripts and RStudio Jobs with Pushbullet alerts}
 \usage{
 source_and_pb(script_path = NULL, ...)
@@ -14,6 +16,10 @@ source_current_and_pb(...)
 bg_and_pb(script_path = NULL)
 
 bg_current_and_pb()
+
+job_and_pb(script_path = NULL)
+
+job_current_and_pb()
 }
 \arguments{
 \item{script_path}{The script to run. If NULL for `job_and_pb()` and

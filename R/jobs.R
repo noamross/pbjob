@@ -67,3 +67,24 @@ bg_current_and_pb <- function() {
   script_path <- rstudioapi::getSourceEditorContext()$path
   bg_and_pb(script_path = script_path)
 }
+
+#' @export
+#' @rdname jobs
+job_and_pb <- function(script_path = NULL) {
+  if (is.null(script_path)) script_path <- rstudioapi::selectFile()
+  job_name  <- paste("pbjob:", basename(script_path))
+  tmpscript <- tempfile(fileext = ".R")
+  cat(
+    "pbjob::source_and_pb('", normalizePath(script_path), "')\n",
+    file = tmpscript, sep = ""
+  )
+  rsjob <- rstudioapi::jobRunScript(tmpscript, name = job_name,
+                                    workingDir = getwd())
+}
+
+#' @export
+#' @rdname jobs
+job_current_and_pb <- function() {
+  script_path <- rstudioapi::getSourceEditorContext()$path
+  job_and_pb(script_path = script_path)
+}
