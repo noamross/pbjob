@@ -41,6 +41,11 @@ The package has four functions, each of which has an accompanying RStudio Add-In
   It returns an [`r_process`](https://callr.r-lib.org/reference/r_bg.html) object.
 - `source_current_and_pb()` and `bg_current_and_pb()` do the same but run
   the current active file in the RStudio editor.
+  
+Note that background sessions are child processes of the R session in which they
+are launched, and will be killed is if you quit or restart R.
+
+---
 
 Please note that the 'pbjob' project is released with a 
 [Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this

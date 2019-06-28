@@ -46,8 +46,7 @@ bg_and_pb <- function(script_path = NULL) {
     args = list(z = normalizePath(script_path)),
     wd = getwd(),
     system_profile = TRUE, user_profile = TRUE,
-    supervise = TRUE,
-    error = "error"
+    supervise = TRUE
   )
 }
 
