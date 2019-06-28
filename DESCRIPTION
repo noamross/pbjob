@@ -1,5 +1,5 @@
 Package: pbjob
-Title: Run Jobs in RStudio with Pushbullet Alerts
+Title: Run Scripts and Jobs with Pushbullet Alerts
 Version: 0.0.0.9000
 Authors@R: 
     person(given = "Noam",
@@ -7,7 +7,9 @@ Authors@R:
            role = c("aut", "cre"),
            email = "noam.ross@gmail.com",
            comment = c(ORCID = "0000-0002-2136-0000"))
-Description: What the package does (one paragraph).
+Description: Provides convenience functsions and RStudio Add-Ins to source scripts,
+  run background processes, and run RStudio jobs with completion or error alerts
+  provided via Pushbullet (<https://www.pushbullet.com/>).
 License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
