@@ -42,6 +42,6 @@ The package has four functions, each of which has an accompanying RStudio Add-In
 - `source_current_and_pb()` and `bg_current_and_pb()` do the same but run
   the current active file in the RStudio editor.
 
-Please note that the 'pbjob' project is released with a
-  [Contributor Code of Conduct](CODE_OF_CONDUCT.md).
-  By contributing to this project, you agree to abide by its terms.
+Please note that the 'pbjob' project is released with a 
+[Contributor Code of Conduct](CODE_OF_CONDUCT.md). By contributing to this
+project, you agree to abide by its terms.
