@@ -1,0 +1,21 @@
+Name: Source Active File with Pushbullet Alert
+Description: Runs the current script as a Job, then
+Binding: source_current_and_pb
+Interactive: true
+
+Name: Run Active File in Background with Pushbullet Alert
+Description: Runs the current script as a Job, then
+Binding: bg_current_and_pb
+Interactive: true
+
+Name: Source File with Pushbullet Alert
+Description: Runs the current script as a Job, then
+Binding: source_and_pb
+Interactive: true
+
+Name: Run File in Background with Pushbullet Alert
+Description: Runs the current script as a Job, then
+Binding: bg_and_pb
+Interactive: true
+
+
