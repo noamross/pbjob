@@ -12,6 +12,10 @@
 #' setting up Pushbullet with R - you just need to get an API key and run
 #' [RPushbullet::pbSetup()].
 #'
+#' @details
+#'
+#' Note that these functions always run scripts in the current working directory.
+#'
 #' @param script_path The script to run. If NULL for `job_and_pb()` and
 #'   `source_and_pb()`, prompts for a file interactively in the RStudio API.
 #' @param ... passed on to [source()]
@@ -45,7 +49,7 @@ source_and_pb <- function(script_path = NULL, ...) {
 #' @export
 #' @rdname jobs
 source_current_and_pb <- function(...) {
-  script_path <- rstudioapi::getSourceEditorContext()$path
+  script_path <- current_rs_doc()
   source_and_pb(script_path, ...)
 }
 
@@ -65,7 +69,7 @@ bg_and_pb <- function(script_path = NULL) {
 #' @export
 #' @rdname jobs
 bg_current_and_pb <- function() {
-  script_path <- rstudioapi::getSourceEditorContext()$path
+  script_path <- current_rs_doc()
   bg_and_pb(script_path = script_path)
 }
 
@@ -86,6 +90,18 @@ job_and_pb <- function(script_path = NULL) {
 #' @export
 #' @rdname jobs
 job_current_and_pb <- function() {
-  script_path <- rstudioapi::getSourceEditorContext()$path
+  script_path <- current_rs_doc()
   job_and_pb(script_path = script_path)
 }
+
+current_rs_doc <- function() {
+  doc <- rstudioapi::getSourceEditorContext()
+  if (doc$path == "") {
+    tmp <- file.path(tempdir(), ".active-rstudio-document")
+    writeLines(doc$contents, tmp)
+    return(tmp)
+  } else {
+    return(doc$path)
+  }
+}
+

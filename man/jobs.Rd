@@ -39,3 +39,6 @@ See [here](https://github.com/eddelbuettel/rpushbullet#initialization) about
 setting up Pushbullet with R - you just need to get an API key and run
 [RPushbullet::pbSetup()].
 }
+\details{
+Note that these functions always run scripts in the current working directory.
+}
