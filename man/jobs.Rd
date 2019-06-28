@@ -30,10 +30,11 @@ job_current_and_pb()
 \description{
 Functions, mostly to be used with RStudio Add-Ins, to run  scripts
 with Pushbullet alerts. `source_` functions source in current session,
-`bg_` functions in background session.  `_current_` functions use the current
+`bg_` functions in background session, and `job_. functions in the background
+as RStudio jobs.   `_current_` functions use the current
 RStudio editor pane, other functions take a script argument.
 
-these functions will issue a push alert using [RPushbullet::pbPost()].
+These functions will issue a push alert using [RPushbullet::pbPost()].
 See [here](https://github.com/eddelbuettel/rpushbullet#initialization) about
 setting up Pushbullet with R - you just need to get an API key and run
 [RPushbullet::pbSetup()].
