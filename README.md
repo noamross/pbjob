@@ -34,17 +34,17 @@ in that package README, but in short, do this just once:
 
 The package has six functions, each of which has an accompanying RStudio Add-In
 
-- `source_and pb(script_path)` runs a script and sends a Pushbullet alert when
+- `source_and_pb(script_path)` runs a script and sends a Pushbullet alert when
   it is complete.  An alert is also sent if the script errors. If `script_path`
   is `NULL`, the RStudio interface is used to select a file.
 - `bg_and_pb()` runs the script in a background session with the same alerts.
   It returns an [`r_process`](https://callr.r-lib.org/reference/r_bg.html) object.
-
 - `job_and_pb()` runs the script as an RStudio Job with the same alerts. Note
    that the progress bar will not display anything.
-- `source_current_and_pb()`, `bg_current_and_pb()` and `job_and_pb` do the same
-   but run the current active file in the RStudio editor.
-  
+- `source_current_and_pb()`, `bg_current_and_pb()` and `job_current_and_pb()` do
+   the same but run the current active file in the RStudio editor. They're
+   especially handy if you [assign the Add-Ins keyboard shortcuts](https://support.rstudio.com/hc/en-us/articles/206382178-Customizing-Keyboard-Shortcuts).
+   
 Note that background sessions are child processes of the R session in which they
 are launched, and will be killed is if you quit or restart R.
 
